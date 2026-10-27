@@ -20,10 +20,3 @@ This ZIP contains the updated Node.js website, PWA manifest, service worker, sup
 
 ## Important
 The website requires a configured `OPENAI_API_KEY` for live AI answers. Do not place API keys in browser code. Test registration/login, marketplace actions and AI Help after deployment. A successful build/package cannot guarantee the remote hosting environment or external API credentials are configured correctly.
-
-
-## Requested update (Seller-only authentication)
-- Replaced `/icons/logo.png`, `/icons/icon-192.png`, and `/icons/icon-512.png` with the first supplied Nirvix Ai logo.
-- Registration and login screens show Seller only; the standard auth API accepts Seller accounts only.
-- Existing dashboard, AI Help, marketplace pages, and non-auth service code were otherwise preserved.
-- Deploy the included files together from the project root. Existing Customer/Provider accounts are retained in stored data but cannot use the standard login flow in this Seller-only build.

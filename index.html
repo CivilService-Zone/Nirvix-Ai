@@ -218,6 +218,8 @@ body{background:linear-gradient(180deg,#f5f8fc 0%,#eef3f8 100%)}
 <div class="founder">Founder – Er. Ranjan Kumar</div>
 </div>
 <h2 style="text-align:center">Join as</h2>
+<button class="role rc" onclick="startRegistration('Customer')">👤 Customer<small>Find services &amp; book</small></button>
+<button class="role rp" onclick="startRegistration('Provider')">👷 Service Provider<small>Engineer, Contractor, etc.</small></button>
 <button class="role rs" onclick="startRegistration('Seller')">🏪 Business / Seller<small>Shop &amp; Material Seller</small></button>
 <p style="text-align:center;color:var(--muted)">Already have account? <button class="link" onclick="showLogin()">Login</button></p>
 <div class="ownerGate"><button onclick="ownerAccess()">🔐 Owner / Admin Access</button></div>
@@ -228,13 +230,13 @@ body{background:linear-gradient(180deg,#f5f8fc 0%,#eef3f8 100%)}
 <div class="authbox">
 <div class="authbrand"><img alt="Ranjan Kumar Logo" class="miniLogo authLogo" src="/icons/logo.png"/><h1><span class="nirvix-word">Nirvix</span> <span class="ai-word">Ai</span></h1><div>Build • Plan • Estimate • Live</div><div class="founder">Founder – Er. Ranjan Kumar</div></div>
 <h2 style="text-align:center">Login to your Account</h2>
-<div class="tabs seller-only-tabs"><button class="on" id="ts" type="button">🏪 Seller Login</button></div>
+<div class="tabs"><button class="on" id="tc" onclick="setRole('Customer')">Customer</button><button id="tp" onclick="setRole('Provider')">Provider</button><button id="ts" onclick="setRole('Seller')">Seller</button></div>
 <div class="loginModeTabs">
 <button type="button" class="loginMode active" id="loginByMobileBtn" onclick="setLoginMode('mobile')">📱 Mobile Login</button>
 <button type="button" class="loginMode" id="loginByEmailBtn" onclick="setLoginMode('email')">✉️ Email Login</button>
 </div>
 <div class="field" id="loginMobileWrap"><label>Registered Mobile Number</label><input id="loginMobile" maxlength="10" inputmode="numeric" autocomplete="tel" placeholder="Enter the same mobile used at registration"/></div>
-<div class="field"><label>4 Digit Password (Seller account)</label><input id="loginPassword" type="password" inputmode="numeric" maxlength="4" placeholder="4 digit password" autocomplete="current-password"/></div>
+<div class="field"><label>4 Digit Password (सभी accounts के लिए जरूरी)</label><input id="loginPassword" type="password" inputmode="numeric" maxlength="4" placeholder="4 digit password" autocomplete="current-password"/></div>
 <div class="field hidden" id="loginEmailWrap"><label>Registered Email ID</label><input id="loginEmail" type="email" autocomplete="email" placeholder="Enter the same email used at registration"/></div>
 <button class="btn primary" onclick="doLogin()">Login to Registered Account</button>
 <div class="loginRule">Registered mobile/Gmail और सही role चुनें। सभी roles में registration वाला वही 4 digit password डालें।</div>
@@ -2329,7 +2331,7 @@ function esc4(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&
 async function api(path,opts={}){let h={'Content-Type':'application/json',...(opts.headers||{})};if(cszToken)h.Authorization='Bearer '+cszToken;let r=await fetch(API+path,{...opts,headers:h});let d={};try{d=await r.json()}catch{}if(!r.ok)throw new Error(d.error||'Request failed');return d}
 function save4(){localStorage.setItem('csz_v4_cart',JSON.stringify(cszCart));localStorage.setItem('csz_v4_token',cszToken);localStorage.setItem('csz_v4_user',JSON.stringify(cszUser));}
 function hero4(title,sub){return `<div class="hero"><div class="csz-v4-badge">Nirvix Ai ZONE • MARKETPLACE</div><h1>${title}</h1><p>${sub}</p><div class="founder">Founder – Er. Ranjan Kumar</div></div>`}
-window.cszMarketplaceLogin=function(){document.getElementById('csz4Modal')?.remove();let m=document.createElement('div');m.id='csz4Modal';m.className='csz-v4-modal show';m.innerHTML=`<div class="box"><h2>🔐 Marketplace Login / Register</h2><p>केवल Seller account से login/register करके products और orders manage करें।</p><div class="toolbar"><div class="field"><label>Name (registration only)</label><input id="c4name" placeholder="Your name"></div><div class="field"><label>Mobile</label><input id="c4mobile" maxlength="10" inputmode="numeric" placeholder="10 digit mobile"></div></div><div class="toolbar"><div class="field"><label>Role</label><select id="c4role"><option value="Seller" selected>Seller</option></select></div></div><div class="field"><label>4 digit password</label><input id="c4password" type="password" inputmode="numeric" maxlength="4" placeholder="Registration वाला password" autocomplete="current-password"></div><div class="field"><label>Email ID / Gmail (optional)</label><input id="c4email" type="email" placeholder="name@gmail.com"></div><div class="field"><label>Address / City (registration only)</label><input id="c4place" placeholder="Patna, Bihar"></div><div class="actions"><button class="btn primary" onclick="csz4Auth('register')">Create Account</button><button class="btn" onclick="csz4Auth('login')">Login</button><button class="btn orange" onclick="document.getElementById('csz4Modal').remove()">Close</button></div><div id="c4authmsg" class="notice"></div></div>`;document.body.appendChild(m)};
+window.cszMarketplaceLogin=function(){document.getElementById('csz4Modal')?.remove();let m=document.createElement('div');m.id='csz4Modal';m.className='csz-v4-modal show';m.innerHTML=`<div class="box"><h2>🔐 Marketplace Login / Register</h2><p>Customer या Seller account बनाकर orders और products manage करें।</p><div class="toolbar"><div class="field"><label>Name (registration only)</label><input id="c4name" placeholder="Your name"></div><div class="field"><label>Mobile</label><input id="c4mobile" maxlength="10" inputmode="numeric" placeholder="10 digit mobile"></div></div><div class="toolbar"><div class="field"><label>Role</label><select id="c4role"><option value="Customer">Customer</option><option value="Seller">Seller</option><option value="Provider">Provider</option></select></div></div><div class="field"><label>4 digit password</label><input id="c4password" type="password" inputmode="numeric" maxlength="4" placeholder="Registration वाला password" autocomplete="current-password"></div><div class="field"><label>Email ID / Gmail (optional)</label><input id="c4email" type="email" placeholder="name@gmail.com"></div><div class="field"><label>Address / City (registration only)</label><input id="c4place" placeholder="Patna, Bihar"></div><div class="actions"><button class="btn primary" onclick="csz4Auth('register')">Create Account</button><button class="btn" onclick="csz4Auth('login')">Login</button><button class="btn orange" onclick="document.getElementById('csz4Modal').remove()">Close</button></div><div id="c4authmsg" class="notice"></div></div>`;document.body.appendChild(m)};
 window.csz4Auth=async function(mode){try{const selectedRole=document.getElementById('c4role').value,mobile=document.getElementById('c4mobile').value.trim(),password=document.getElementById('c4password').value.trim(),email=document.getElementById('c4email').value.trim().toLowerCase();if(!/^\d{10}$/.test(mobile))throw new Error('10 digit registered mobile number डालें।');if(!/^\d{4}$/.test(password))throw new Error('4 अंकों का password डालें।');let payload={role:selectedRole,password,mobile,loginBy:'mobile'};if(mode==='register'){if((document.getElementById('c4name').value||'').trim().length<2)throw new Error('Registration के लिए अपना नाम भरें।');if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))throw new Error('Valid Email ID डालें।');Object.assign(payload,{name:c4name.value,email,place:c4place.value,address:c4place.value})}const d=await api('/api/auth/'+mode,{method:'POST',body:JSON.stringify(payload)});if(d.user.role!==selectedRole)throw new Error('यह account '+d.user.role+' role का है। सही role चुनें।');cszToken=d.token;cszUser=d.user;save4();localStorage.setItem('csz_api_token',d.token);try{currentUser=d.user;window.role=d.user.role}catch(_){}document.getElementById('csz4Modal')?.remove();alert(mode==='register'?'Account created successfully.':'Login successful.');page(selectedRole==='Seller'?'seller':selectedRole==='Provider'?'provider':'dashboard')}catch(e){const msg=document.getElementById('c4authmsg');if(msg)msg.textContent=e.message||'Login/Register असफल';else alert(e.message)}};
 window.csz4Logout=function(){cszToken='';cszUser=null;save4();alert('Marketplace logout successful.');page('dashboard')};
 window.csz4Add=function(p){cszCart.push({productId:p.id,name:p.name,price:Number(p.price),unit:p.unit,qty:1,sellerId:p.sellerId});save4();alert(p.name+' cart में add हो गया।');page('cart')};
@@ -2671,52 +2673,6 @@ if ('serviceWorker' in navigator) {
  // Correct branded WhatsApp enquiry links, including dynamically created help links.
  const waObserver=new MutationObserver(()=>document.querySelectorAll('a[href*="wa.me"]').forEach(a=>{a.href=waUrl;a.target='_blank';a.rel='noopener'}));
  waObserver.observe(document.body,{childList:true,subtree:true});
-})();
-</script>
-
-
-<style id="nirvix-seller-only-auth">
-/* Requested update: only Seller is offered in registration/login. */
-#register .role.rc,#register .role.rp,#login .tabs button:not(#ts){display:none!important}
-#login .tabs{grid-template-columns:1fr!important}
-#register .authbox>h2{font-size:24px}
-#register .role.rs{display:block;width:100%;margin-top:16px}
-#login .loginRule{line-height:1.55}
-</style>
-<script id="nirvix-seller-only-auth-logic">
-(function(){
-  // Keep the existing registration/login flows and route all standard auth through Seller.
-  window.startRegistration=function(){
-    role='Seller';window.role='Seller';
-    try { document.getElementById('regName').value=''; document.getElementById('regMobile').value=''; } catch(e){}
-    ['regEmail','regReferral'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
-    var place=document.getElementById('regPlace');if(place&&!place.value)place.value='';
-    if(typeof show==='function')show('regModal');
-  };
-  window.setRole=function(){role='Seller';window.role='Seller';var tab=document.getElementById('ts');if(tab)tab.classList.add('on');};
-  var oldComplete=window.completeRegistration;
-  if(typeof oldComplete==='function')window.completeRegistration=function(){role='Seller';window.role='Seller';return oldComplete.apply(this,arguments)};
-  window.doLogin=function(){
-    role='Seller';window.role='Seller';
-    var mode=(typeof cszLoginMode!=='undefined')?cszLoginMode:'mobile',value='';
-    if(mode==='email'){value=String(document.getElementById('loginEmail')?.value||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))return alert('Valid registered Seller Email ID डालें।');}
-    else {value=String(document.getElementById('loginMobile')?.value||'').trim();if(!/^\d{10}$/.test(value))return alert('10 digit registered Seller mobile number डालें।');}
-    var all=Array.isArray(window.users)?window.users:[],u=all.find(function(x){return x.role==='Seller'&&(mode==='email'?String(x.email||'').trim().toLowerCase()===value:String(x.mobile||'').trim()===value)});
-    if(!u)return alert('इस जानकारी से Seller account नहीं मिला। Registration वाला mobile/email डालें।');
-    currentUser=u;window.currentUser=u;try{localStorage.setItem('csz_session_user_id',String(u.id))}catch(e){}
-    if(typeof hide==='function'){hide('login');hide('register');hide('regModal');show('app')}
-    if(typeof applyUser==='function')applyUser();if(typeof buildNav==='function')buildNav();
-    if(typeof history!=='undefined')history.replaceState({cszPage:'seller'},'','#seller');
-    if(typeof render==='function')render('seller');else if(typeof page==='function')page('seller');
-  };
-  var originalMarketplaceLogin=window.cszMarketplaceLogin;
-  if(typeof originalMarketplaceLogin==='function'){
-    window.cszMarketplaceLogin=function(){originalMarketplaceLogin();var select=document.getElementById('c4role');if(select){select.innerHTML='<option value="Seller" selected>Seller</option>';select.value='Seller';}var msg=document.querySelector('#csz4Modal p');if(msg)msg.textContent='केवल Seller account से login/register करके products और orders manage करें।'};
-  }
-  var originalCsz4Auth=window.csz4Auth;
-  if(typeof originalCsz4Auth==='function')window.csz4Auth=function(mode){var select=document.getElementById('c4role');if(select)select.value='Seller';return originalCsz4Auth(mode)};
-  // Avoid stale cached app branding/auth UI after deployment.
-  document.querySelectorAll('img[src="/icons/logo.png"]').forEach(function(img){img.alt='Nirvix Ai Logo';});
 })();
 </script>
 
