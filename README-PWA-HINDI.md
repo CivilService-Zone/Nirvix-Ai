@@ -1,6 +1,6 @@
-# Nirvix AI — PWA package
+# Nirvix Ai — PWA package
 
-ऐप का नाम: Nirvix AI
+ऐप का नाम: Nirvix Ai
 
 ## GitHub / Render पर अपडेट
 1. ZIP extract करें।

@@ -1,8 +1,8 @@
-Nirvix AI — AI Assistant Setup
+Nirvix Ai — AI Assistant Setup
 ======================================
 
 The uploaded website source already contains:
-- A Nirvix AI AI Help chat button and chat panel in index.html
+- A Nirvix Ai AI Help chat button and chat panel in index.html
 - Text question submission to POST /api/ai/ask
 - Microphone speech-to-text (browser support required)
 - A “Listen to answer” button using the browser's speech synthesis
@@ -13,7 +13,7 @@ IMPORTANT: the AI will not answer on the live website until the OpenAI API key i
 Do NOT put the API key in index.html or any browser JavaScript.
 
 Render setup:
-1. Open the Nirvix AI service in Render.
+1. Open the Nirvix Ai service in Render.
 2. Open Environment.
 3. Add environment variable:
    OPENAI_API_KEY = your OpenAI API key

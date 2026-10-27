@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "Nirvix AI",
-  "short_name": "Nirvix AI",
-  "description": "Nirvix AI — Build, Plan, Estimate and Live",
+  "name": "Nirvix Ai",
+  "short_name": "Nirvix Ai",
+  "description": "Nirvix Ai \u2014 Build, Plan, Estimate and Live",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
