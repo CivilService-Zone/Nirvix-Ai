@@ -2,7 +2,7 @@
   "name": "nirvix-ai",
   "version": "1.0.0",
   "private": true,
-  "description": "Nirvix Ai construction marketplace and AI services platform",
+  "description": "Nirvix Ai construction and AI marketplace platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
