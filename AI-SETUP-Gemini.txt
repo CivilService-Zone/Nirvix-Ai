@@ -1,24 +1,35 @@
-Nirvix Ai — Gemini AI Setup
-===========================
+Nirvix Ai — Update Setup (Logo, उपयोग के तरीके, Gemini AI)
+=============================================================
 
-The website now supports Google's Gemini API on the server. The Gemini key must never be placed in index.html or browser JavaScript.
+Included:
+- Updated index.html with the supplied Nirvix Ai logo used for login, registration, header, sidebar, and PWA icons.
+- Three-dot menu now includes “उपयोग के तरीके” between Theme color and About Us.
+- Usage guide is available in Hindi, English, and Urdu with language selector, bold colored headings, and right-to-left Urdu layout.
+- AI Help maintenance message updated as requested.
+- Server-side Gemini API support. The API key is never placed in browser HTML/JavaScript.
 
-Render setup:
-1. Open the Nirvix Ai service in Render.
-2. Open Environment.
-3. Add GEMINI_API_KEY with your key from Google AI Studio.
-4. Optional: add GEMINI_MODEL=gemini-2.5-flash
-5. Save changes and redeploy.
-6. Open /api/health on your domain and check aiConfigured=true and aiProvider=Gemini.
-7. Open AI Help and ask a test question.
+ENABLE GEMINI AI:
+1. Open Google AI Studio: https://aistudio.google.com/app/apikey
+2. Create/copy a Gemini API key. Keep it private.
+3. Open your hosting service's server Environment/Variables settings.
+4. Add:
+   GEMINI_API_KEY = your_private_gemini_api_key
+   AI_PROVIDER = gemini
+   GEMINI_MODEL = gemini-2.5-flash
+5. Save and redeploy/restart the Node.js server.
+6. Open https://YOUR-DOMAIN/api/health and confirm aiConfigured is true and aiProvider is gemini.
+7. Test AI Help with a real question. API availability, quota, and billing/rate limits are controlled by Google.
 
-If GEMINI_API_KEY is not set, the server can still use the previous OpenAI configuration if OPENAI_API_KEY is configured.
+SECURITY:
+- Never paste GEMINI_API_KEY into index.html or client-side code.
+- Do not include your API key in the ZIP or share it publicly.
+- If Gemini fails, the website's AI Help shows:
+  🚧 Nirvix Ai के AI help पर हमारे टीम member अभी काम कर रहे हैं। कृपया कुछ समय बाद दोबारा प्रयास करें।
+  ज्यादा जानकारी के लिए ( mob-9905018215 )
+  Developer By-Ranjan kumar
 
-When AI is not configured or a request fails, the app displays:
-🚧 Nirvix Ai के AI help पर अभी काम चल रहा है। कृपया कुछ समय बाद दोबारा प्रयास करें।
-ज्यादा जानकारी के लिए ( mob-9905018215 ) Developer By-Ranjan kumar
+OPTIONAL OPENAI:
+The server still supports OpenAI. If you prefer it, set AI_PROVIDER=openai and OPENAI_API_KEY=your_key (and optionally OPENAI_MODEL=gpt-4.1-mini).
 
-Notes:
-- Never publish your API key or put it in index.html.
-- Google AI Studio/API availability, quotas and billing terms may apply.
-- AI output may be inaccurate. Have structural designs checked by a qualified engineer.
+NOTE:
+AI answers can be wrong. For RCC/structural design and construction safety, confirm important decisions with a qualified engineer.
