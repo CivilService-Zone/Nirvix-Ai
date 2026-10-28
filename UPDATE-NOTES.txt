@@ -1,0 +1,10 @@
+Nirvix Ai website update
+
+Requested corrections in this update:
+- Registration and login screens use the supplied Nirvix Ai logo asset (/icons/logo.png), removing the embedded legacy logo override.
+- PWA logo assets icon-192.png and icon-512.png are regenerated from the supplied Nirvix Ai logo.
+- AI Help fallback message updated to the requested team-members maintenance text, phone number, and developer credit.
+- Added print-branding cleanup before native print so visible legacy CivilService Zone branding and identifiable legacy logo images in the current page are replaced with Nirvix Ai branding.
+- Other app features and files are retained from the previous update package.
+
+Keep API keys in server environment variables only, never in index.html.
