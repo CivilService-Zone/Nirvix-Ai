@@ -1,0 +1,24 @@
+Nirvix Ai — Gemini AI Setup
+===========================
+
+The website now supports Google's Gemini API on the server. The Gemini key must never be placed in index.html or browser JavaScript.
+
+Render setup:
+1. Open the Nirvix Ai service in Render.
+2. Open Environment.
+3. Add GEMINI_API_KEY with your key from Google AI Studio.
+4. Optional: add GEMINI_MODEL=gemini-2.5-flash
+5. Save changes and redeploy.
+6. Open /api/health on your domain and check aiConfigured=true and aiProvider=Gemini.
+7. Open AI Help and ask a test question.
+
+If GEMINI_API_KEY is not set, the server can still use the previous OpenAI configuration if OPENAI_API_KEY is configured.
+
+When AI is not configured or a request fails, the app displays:
+🚧 Nirvix Ai के AI help पर अभी काम चल रहा है। कृपया कुछ समय बाद दोबारा प्रयास करें।
+ज्यादा जानकारी के लिए ( mob-9905018215 ) Developer By-Ranjan kumar
+
+Notes:
+- Never publish your API key or put it in index.html.
+- Google AI Studio/API availability, quotas and billing terms may apply.
+- AI output may be inaccurate. Have structural designs checked by a qualified engineer.

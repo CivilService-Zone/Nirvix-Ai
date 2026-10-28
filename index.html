@@ -212,7 +212,7 @@ body{background:linear-gradient(180deg,#f5f8fc 0%,#eef3f8 100%)}
 <section class="auth" id="register">
 <div class="authbox">
 <div class="authbrand">
-<img alt="Ranjan Kumar Logo" class="miniLogo authLogo" src="/icons/logo.png"/>
+<img alt="Nirvix Ai Logo" class="miniLogo authLogo" src="/icons/logo.png"/>
 <h1><span class="nirvix-word">Nirvix</span> <span class="ai-word">Ai</span></h1>
 <div>Build • Plan • Estimate • Live</div>
 <div class="founder">Founder – Er. Ranjan Kumar</div>
@@ -228,7 +228,7 @@ body{background:linear-gradient(180deg,#f5f8fc 0%,#eef3f8 100%)}
 <!-- Login -->
 <section class="auth hidden" id="login">
 <div class="authbox">
-<div class="authbrand"><img alt="Ranjan Kumar Logo" class="miniLogo authLogo" src="/icons/logo.png"/><h1><span class="nirvix-word">Nirvix</span> <span class="ai-word">Ai</span></h1><div>Build • Plan • Estimate • Live</div><div class="founder">Founder – Er. Ranjan Kumar</div></div>
+<div class="authbrand"><img alt="Nirvix Ai Logo" class="miniLogo authLogo" src="/icons/logo.png"/><h1><span class="nirvix-word">Nirvix</span> <span class="ai-word">Ai</span></h1><div>Build • Plan • Estimate • Live</div><div class="founder">Founder – Er. Ranjan Kumar</div></div>
 <h2 style="text-align:center">Login to your Account</h2>
 <div class="tabs"><button class="on" id="tc" onclick="setRole('Customer')">Customer</button><button id="tp" onclick="setRole('Provider')">Provider</button><button id="ts" onclick="setRole('Seller')">Seller</button></div>
 <div class="loginModeTabs">
@@ -249,13 +249,13 @@ body{background:linear-gradient(180deg,#f5f8fc 0%,#eef3f8 100%)}
 <div class="menuBackdrop" id="menuBackdrop" onclick="closeMenu()"></div>
 <header class="top">
 <button aria-expanded="false" aria-label="Open navigation menu" class="topBtn" id="menuBtn" onclick="toggleMenu()" type="button"><span id="menuIcon">☰</span></button>
-<div class="brand"><img alt="Ranjan Kumar Logo" class="miniLogo" src="/icons/logo.png"/>Nirvix Ai</div>
+<div class="brand"><img alt="Nirvix Ai Logo" class="miniLogo" src="/icons/logo.png"/><span>Nirvix Ai</span><button type="button" id="nirvix-global-lang" aria-label="Change language" title="भाषा बदलें / Change language / زبان تبدیل کریں" style="border:1px solid #ffffff66;background:#ffffff20;color:#fff;border-radius:9px;padding:4px 7px;font-size:15px;cursor:pointer">⋮</button></div>
 <button class="topBtn" onclick="page('profile')">👤</button>
 <button class="topBtn" onclick="logout()">↪</button>
 </header>
 <div class="layout">
 <aside class="side" id="side">
-<div class="profile"><img alt="Ranjan Kumar Logo" class="miniLogo profileLogo" src="/icons/logo.png"/><b id="userName">Ranjan Kumar</b><br/><small id="userRole">Customer</small></div>
+<div class="profile"><img alt="Nirvix Ai Logo" class="miniLogo profileLogo" src="/icons/logo.png"/><b id="userName">Ranjan Kumar</b><br/><small id="userRole">Customer</small></div>
 <button aria-label="Close menu" class="menuOpen" onclick="closeMenu()" type="button">✕</button><div class="nav" id="nav"></div>
 <span class="menuHint">Tap any menu item to open that page</span>
 </aside>
@@ -2666,8 +2666,8 @@ if ('serviceWorker' in navigator) {
  $('nirvix-about-overlay').addEventListener('click',e=>{if(e.target===$('nirvix-about-overlay'))$('nirvix-about-overlay').classList.remove('show')});
  window.cszAiMaintenance=function(target){
    if(!target)return;target.replaceChildren();
-   const m=document.createElement('p');m.textContent='Nirvix Ai पर अभी काम चल रहा है। कृपया कुछ समय बाद दोबारा प्रयास करें।';
-   const c=document.createElement('p');c.textContent='ज्यादा जानकारी के लिए (mob-9905018215) Founder By-Ranjan Kumar';
+   const m=document.createElement('p');m.textContent='🚧 Nirvix Ai के AI help पर अभी काम चल रहा है। कृपया कुछ समय बाद दोबारा प्रयास करें।';
+   const c=document.createElement('p');c.textContent='ज्यादा जानकारी के लिए ( mob-9905018215 ) Developer By-Ranjan kumar';
    target.append(m,c);
  };
  // Correct branded WhatsApp enquiry links, including dynamically created help links.
@@ -2678,3 +2678,74 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+<style id="nirvix-guide-polish">
+.csz-guide-content h2,.csz-guide-content h3,.csz-guide-content strong{font-weight:900!important}
+.csz-guide-content h2,.csz-guide-content h3{color:var(--blue)!important}
+.csz-guide-content h2{font-size:20px;margin:18px 0 7px}
+.csz-guide-content h3{font-size:17px;margin:15px 0 6px}
+.csz-guide-content p,.csz-guide-content li{line-height:1.72}
+#nirvix-guide-language-menu button{font-weight:850}
+#nirvix-global-lang{flex-shrink:0}
+@media(max-width:600px){.brand{gap:6px!important}.brand #nirvix-global-lang{padding:3px 6px!important}}
+</style>
+<div class="csz-about-overlay" id="nirvix-guide-overlay" role="dialog" aria-modal="true" aria-label="Nirvix Ai उपयोग के तरीके">
+ <div class="csz-about-box">
+  <div class="csz-about-head"><h2 id="nirvix-guide-title">उपयोग के तरीके</h2><button class="csz-about-lang" id="nirvix-guide-lang" type="button">⋮ भाषा</button><button class="btn" id="nirvix-guide-close" type="button">✕</button></div>
+  <div id="nirvix-guide-language-menu" style="display:none;gap:6px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" data-guide-lang="hi">हिन्दी</button><button class="btn" data-guide-lang="en">English</button><button class="btn" data-guide-lang="ur">اردو</button></div>
+  <div class="csz-about-content csz-guide-content" id="nirvix-guide-content"></div>
+ </div>
+</div>
+<script id="nirvix-guide-and-language">
+(function(){
+ const $=id=>document.getElementById(id);
+ const guideTranslations={
+ hi:`<h2><strong>Nirvix Ai – ऐप इस्तेमाल करने का तरीका (How to Use)</strong></h2>
+ <p><strong>Nirvix Ai में आपका स्वागत है!</strong> यह प्लेटफॉर्म घर बनाने, निर्माण संबंधी गणनाएँ करने और उपलब्ध सेवाओं की जानकारी प्राप्त करने में आपकी मदद करने के लिए बनाया गया है। ऐप का बेहतर उपयोग करने के लिए नीचे दिए गए निर्देशों का पालन करें।</p>
+ <h3><strong>1. शुरुआत करें</strong></h3><p>ऐप खोलें और होम स्क्रीन पर उपलब्ध सुविधाओं को देखें। नए यूजर अपना अकाउंट बनाएँ और पहले से रजिस्टर्ड यूजर लॉगिन करें।</p>
+ <h3><strong>2. अपनी जरूरत की सुविधा चुनें</strong></h3><p>Construction Calculator, Services, Room, Transportation और अन्य उपलब्ध विकल्पों में से अपनी जरूरत के अनुसार विकल्प खोलें।</p>
+ <h3><strong>3. निर्माण की गणना करें</strong></h3><p>लंबाई, चौड़ाई, ऊँचाई, मात्रा और अन्य जरूरी जानकारी भरें। सही माप की यूनिट चुनें और Calculate बटन दबाकर परिणाम प्राप्त करें।</p>
+ <h3><strong>4. सेवाओं की जानकारी प्राप्त करें</strong></h3><p>उपलब्ध सेवा प्रदाताओं, उत्पादों और लिस्टिंग को देखें। संबंधित जानकारी जाँचें और जरूरत के अनुसार आगे बढ़ें।</p>
+ <h3><strong>5. AI Help का उपयोग करें</strong></h3><p>ऐप की सुविधाओं को समझने या निर्माण से जुड़े सवालों के जवाब पाने के लिए उपलब्ध AI Help विकल्प का इस्तेमाल करें।</p>
+ <h3><strong>6. अपना अकाउंट प्रबंधित करें</strong></h3><p>अपने अकाउंट से जुड़ी उपलब्ध सुविधाओं, Referral ID, Rewards और Coupons को संबंधित सेक्शन में देखें।</p>
+ <h3><strong>7. सहायता प्राप्त करें</strong></h3><p>ऐप इस्तेमाल करते समय कोई समस्या आने पर उपलब्ध Help या Contact विकल्प के माध्यम से सहायता लें।</p>
+ <h3><strong>महत्वपूर्ण सुझाव</strong></h3><p>बेहतर परिणाम के लिए हमेशा सही जानकारी और माप दर्ज करें। कैलकुलेटर से प्राप्त परिणाम अनुमानित हो सकते हैं। वास्तविक निर्माण कार्य शुरू करने से पहले लागत, सामग्री और संरचनात्मक डिजाइन की पुष्टि योग्य इंजीनियर से अवश्य कराएँ।</p>
+ <p><strong>Nirvix Ai</strong> का उद्देश्य घर बनाने से जुड़ी जानकारी, गणना और सेवाओं को सरल, सुविधाजनक और अधिक सुलभ बनाना है, ताकि हर व्यक्ति अपनी जरूरत के अनुसार इनका उपयोग कर सके।</p><h3><strong>Nirvix Ai — घर बनाने वाला साथी।</strong></h3>`,
+ en:`<h2><strong>Nirvix Ai – How to Use the App</strong></h2>
+ <p><strong>Welcome to Nirvix Ai!</strong> This platform helps you explore home-building information, perform construction calculations, and learn about available services. Follow these steps to use the app effectively.</p>
+ <h3><strong>1. Get started</strong></h3><p>Open the app and explore the features on the home screen. New users should create an account; registered users can log in.</p>
+ <h3><strong>2. Choose the feature you need</strong></h3><p>Open Construction Calculator, Services, Room, Transportation, or another available option according to your needs.</p>
+ <h3><strong>3. Calculate construction quantities</strong></h3><p>Enter length, width, height, quantity, and other required details. Select the correct measurement unit and press Calculate to view the result.</p>
+ <h3><strong>4. Explore services</strong></h3><p>Review available service providers, products, and listings. Check the relevant details before proceeding.</p>
+ <h3><strong>5. Use AI Help</strong></h3><p>Use AI Help to understand app features or ask questions related to construction.</p>
+ <h3><strong>6. Manage your account</strong></h3><p>Find your available account features, Referral ID, Rewards, and Coupons in their respective sections.</p>
+ <h3><strong>7. Get support</strong></h3><p>If you face a problem while using the app, contact support through the available Help or Contact option.</p>
+ <h3><strong>Important tips</strong></h3><p>Always enter accurate information and measurements. Calculator results may be estimates. Before starting actual construction, have costs, materials, and structural designs checked by a qualified engineer.</p>
+ <p><strong>Nirvix Ai</strong> aims to make home-building information, calculations, and services simpler, more convenient, and more accessible.</p><h3><strong>Nirvix Ai — Your home-building companion.</strong></h3>`,
+ ur:`<h2><strong>Nirvix Ai – ایپ استعمال کرنے کا طریقہ</strong></h2>
+ <p><strong>Nirvix Ai میں خوش آمدید!</strong> یہ پلیٹ فارم گھر بنانے، تعمیراتی حساب کتاب اور دستیاب خدمات کی معلومات حاصل کرنے میں مدد دیتا ہے۔ ایپ کو بہتر طور پر استعمال کرنے کے لیے درج ذیل ہدایات پر عمل کریں۔</p>
+ <h3><strong>1. آغاز کریں</strong></h3><p>ایپ کھولیں اور ہوم اسکرین پر موجود سہولیات دیکھیں۔ نئے صارف اکاؤنٹ بنائیں اور پہلے سے رجسٹرڈ صارف لاگ اِن کریں۔</p>
+ <h3><strong>2. اپنی ضرورت کی سہولت منتخب کریں</strong></h3><p>اپنی ضرورت کے مطابق Construction Calculator، Services، Room، Transportation یا کوئی دوسرا دستیاب اختیار کھولیں۔</p>
+ <h3><strong>3. تعمیراتی حساب کریں</strong></h3><p>لمبائی، چوڑائی، اونچائی، مقدار اور دیگر ضروری معلومات درج کریں۔ درست پیمائشی یونٹ منتخب کرکے Calculate دبائیں۔</p>
+ <h3><strong>4. خدمات کی معلومات حاصل کریں</strong></h3><p>دستیاب سروس فراہم کرنے والوں، مصنوعات اور لسٹنگز کو دیکھیں اور آگے بڑھنے سے پہلے متعلقہ معلومات کی جانچ کریں۔</p>
+ <h3><strong>5. AI Help استعمال کریں</strong></h3><p>ایپ کی سہولیات سمجھنے یا تعمیر سے متعلق سوالات کے جواب حاصل کرنے کے لیے AI Help استعمال کریں۔</p>
+ <h3><strong>6. اپنا اکاؤنٹ منظم کریں</strong></h3><p>Referral ID، Rewards اور Coupons سمیت اکاؤنٹ کی سہولیات متعلقہ حصوں میں دیکھیں۔</p>
+ <h3><strong>7. مدد حاصل کریں</strong></h3><p>ایپ استعمال کرتے وقت مسئلہ ہو تو Help یا Contact کے ذریعے رابطہ کریں۔</p>
+ <h3><strong>اہم مشورے</strong></h3><p>بہتر نتائج کے لیے درست معلومات اور پیمائش درج کریں۔ کیلکولیٹر کے نتائج اندازاً ہو سکتے ہیں۔ تعمیر شروع کرنے سے پہلے لاگت، مواد اور ساختی ڈیزائن کی تصدیق کسی مستند انجینئر سے کروائیں۔</p>
+ <p><strong>Nirvix Ai</strong> کا مقصد گھر بنانے سے متعلق معلومات، حساب اور خدمات کو آسان اور زیادہ قابلِ رسائی بنانا ہے۔</p><h3><strong>Nirvix Ai — گھر بنانے میں آپ کا ساتھی۔</strong></h3>`
+ };
+ function showGuide(lang='hi'){const box=$('nirvix-guide-content');box.innerHTML=guideTranslations[lang]||guideTranslations.hi;box.dir=lang==='ur'?'rtl':'ltr';box.style.textAlign=lang==='ur'?'right':'left';$('nirvix-guide-title').textContent=lang==='hi'?'उपयोग के तरीके':lang==='en'?'How to Use':'استعمال کا طریقہ';$('nirvix-guide-language-menu').style.display='none';$('nirvix-guide-lang').textContent=lang==='hi'?'⋮ भाषा':lang==='en'?'⋮ Language':'⋮ زبان';$('nirvix-guide-overlay').dataset.lang=lang}
+ function openGuide(){ $('nirvix-guide-overlay').classList.add('show');showGuide('hi') }
+ $('nirvix-guide-close').onclick=()=>$('nirvix-guide-overlay').classList.remove('show');
+ $('nirvix-guide-lang').onclick=()=>{const el=$('nirvix-guide-language-menu');el.style.display=el.style.display==='none'?'flex':'none'};
+ $('nirvix-guide-language-menu').querySelectorAll('[data-guide-lang]').forEach(b=>b.onclick=()=>showGuide(b.dataset.guideLang));
+ $('nirvix-guide-overlay').addEventListener('click',e=>{if(e.target===$('nirvix-guide-overlay'))$('nirvix-guide-overlay').classList.remove('show')});
+ const menu=$('csz-quick-menu'),theme=$('csz-menu-theme');
+ if(menu&&theme){
+   const guide=document.createElement('button');guide.type='button';guide.id='nirvix-menu-guide';guide.textContent='📖 उपयोग के तरीके';guide.onclick=()=>{menu.classList.remove('show');openGuide()};
+   const about=$('nirvix-menu-about');
+   if(about) theme.insertAdjacentElement('afterend',guide); else theme.insertAdjacentElement('afterend',guide);
+   if(about) guide.insertAdjacentElement('afterend',about);
+ }
+ $('nirvix-global-lang')?.addEventListener('click',()=>{const lang=prompt('भाषा चुनें / Choose language / زبان منتخب کریں:\n1 हिन्दी\n2 English\n3 اردو','1');if(lang==='1')openGuide();else if(lang==='2'){ $('nirvix-guide-overlay').classList.add('show');showGuide('en')}else if(lang==='3'){ $('nirvix-guide-overlay').classList.add('show');showGuide('ur')}});
+})();
+</script>
